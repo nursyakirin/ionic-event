@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+<button ion-button (click)="openLogin()">Login</button>
+<button ion-button (click)="openRegister()">Register</button>
+<button ion-button (click)="openAddEvent()">Add Event</button>
+
+<ion-list>
+  <ion-item *ngFor="let event of evenList"
+  (click)="goToEventDetail(event.id)">
+  <h2>{{event?.name}}</h2>
+  <p>Ticket:<strong>${{event?.price}}</strong></p>
+   <p>Date:<strong>{{event?.date}}</strong></p>
+
+</ion-item>
+</ion-list>
+</ion-content>
